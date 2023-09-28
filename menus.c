@@ -15,9 +15,11 @@ int menu()
 	printf("\n3. Baja de vivienda.     ");
 	printf("\n4. Listar viviendas.     ");
 	printf("\n5. Listar censistas.     ");
-	printf("\n6. Finalizar programa.   ");
+	printf("\n6. Censos realizados por censista.");
+	printf("\n7. Censista con mas censos.");
+	printf("\n8. Finalizar programa.   ");
 
-	pedirEntero(&opcion, "\nIngrese una opcion: ", "\nLa opcion no es valida. Reingrese: ", 1, 6);
+	pedirEntero(&opcion, "\nIngrese una opcion: ", "\nLa opcion no es valida. Reingrese: ", 1, 8);
 
 	return opcion;
 }

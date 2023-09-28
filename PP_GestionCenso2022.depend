@@ -8,7 +8,7 @@
 
 1695925856 c:\users\fiore\onedrive\escritorio\proyectos_codeblocks\pp_gestioncenso2022\inputs.h
 
-1695929044 source:c:\users\fiore\onedrive\escritorio\proyectos_codeblocks\pp_gestioncenso2022\menus.c
+1695937555 source:c:\users\fiore\onedrive\escritorio\proyectos_codeblocks\pp_gestioncenso2022\menus.c
 	<stdio.h>
 	<stdlib.h>
 	"menus.h"
@@ -16,27 +16,29 @@
 
 1695925772 c:\users\fiore\onedrive\escritorio\proyectos_codeblocks\pp_gestioncenso2022\menus.h
 
-1695930192 source:c:\users\fiore\onedrive\escritorio\proyectos_codeblocks\pp_gestioncenso2022\main.c
+1695937796 source:c:\users\fiore\onedrive\escritorio\proyectos_codeblocks\pp_gestioncenso2022\main.c
 	<stdio.h>
 	<stdlib.h>
 	"menus.h"
 	"vivienda.h"
 	"censista.h"
 
-1695931681 c:\users\fiore\onedrive\escritorio\proyectos_codeblocks\pp_gestioncenso2022\vivienda.h
+1695937950 c:\users\fiore\onedrive\escritorio\proyectos_codeblocks\pp_gestioncenso2022\vivienda.h
 	"censista.h"
 
-1695930360 source:c:\users\fiore\onedrive\escritorio\proyectos_codeblocks\pp_gestioncenso2022\vivienda.c
+1695937873 source:c:\users\fiore\onedrive\escritorio\proyectos_codeblocks\pp_gestioncenso2022\vivienda.c
 	<stdio.h>
 	<stdlib.h>
+	<string.h>
 	"vivienda.h"
 	"inputs.h"
 	"censista.h"
 
-1695927761 source:c:\users\fiore\onedrive\escritorio\proyectos_codeblocks\pp_gestioncenso2022\censista.c
+1695936651 source:c:\users\fiore\onedrive\escritorio\proyectos_codeblocks\pp_gestioncenso2022\censista.c
 	<stdio.h>
 	<stdlib.h>
 	"censista.h"
+	"vivienda.h"
 
-1695930378 c:\users\fiore\onedrive\escritorio\proyectos_codeblocks\pp_gestioncenso2022\censista.h
+1695936663 c:\users\fiore\onedrive\escritorio\proyectos_codeblocks\pp_gestioncenso2022\censista.h
 

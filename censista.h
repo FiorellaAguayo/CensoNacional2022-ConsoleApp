@@ -15,3 +15,5 @@ typedef struct
 
 int mostrarListaCensistas(eCensista* lista, int tam);
 int menuModificacion();
+void mostrarTituloCensista();
+void mostrarUnCensista(eCensista censista);

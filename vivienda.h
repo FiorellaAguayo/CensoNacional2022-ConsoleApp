@@ -23,3 +23,8 @@ int buscarViviendaPorId(eVivienda* lista, int tam, int id);
 int modificarVivienda(eVivienda* listaViviendas, int tamViviendas, eCensista* listaCensistas, int tamCensistas);
 int bajaVivienda(eVivienda* lista, int tam);
 int mostrarListaViviendas(eVivienda* lista, int tam);
+int ordenarViviendas(eVivienda* lista, int tam, int order);
+int hacerListado(eVivienda* lista, int tam);
+int censosPorCensista(eVivienda* listaViviendas, int tamViviendas, eCensista* listaCensistas, int tamCensistas);
+int obtenerCensistaConMasCensos(eVivienda* listaViviendas, int tamViviendas, eCensista* listaCensistas, int tamCensistas);
+void mostrarCensistaConMasCensos(eVivienda* listaViviendas, int tamViviendas, eCensista* listaCensistas, int tamCensistas);

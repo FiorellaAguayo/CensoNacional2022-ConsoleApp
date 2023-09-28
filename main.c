@@ -76,7 +76,7 @@ int main()
                 break;
 
             case 4:
-                if(mostrarListaViviendas(listaViviendas, TAM_VIVIENDAS))
+                if(hacerListado(listaViviendas, TAM_VIVIENDAS))
                 {
                     printf("\n\nListado de viviendas exitoso.");
                 }
@@ -98,6 +98,21 @@ int main()
                 break;
 
             case 6:
+                if(censosPorCensista(listaViviendas, TAM_VIVIENDAS ,listaCensistas, TAM_CENSISTAS))
+                {
+                    printf("\n\nListado censos por censista exitoso.");
+                }
+                else
+                {
+                    printf("\n\nHubo un problema al mostrar datos del censista.");
+                }
+                break;
+
+            case 7:
+                mostrarCensistaConMasCensos(listaViviendas, TAM_VIVIENDAS, listaCensistas, TAM_CENSISTAS);
+                break;
+
+            case 8:
                 printf("\n\nGracias por utilizar este programa!");
                 seguir = 0;
                 break;

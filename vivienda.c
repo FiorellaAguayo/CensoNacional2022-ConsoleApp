@@ -230,3 +230,149 @@ int bajaVivienda(eVivienda* lista, int tam)
     }
     return todoOk;
 }
+
+int ordenarViviendas(eVivienda* lista, int tam, int order)
+{
+    int todoOk = 0;
+    eVivienda auxVivienda;
+
+    if(lista != NULL && tam > 0)
+    {
+		for(int i = 0; i < tam - 1; i++)
+		{
+			for(int j = i + 1; j < tam; j++)
+			{
+				if(order == 1) //ascendente
+				{
+					if((strcmp(lista[i].calle, lista[j].calle) > 0) || ((strcmp(lista[i].calle, lista[j].calle) == 0) && lista[i].cantidadPersonas > lista[j].cantidadPersonas))
+					{
+						auxVivienda = lista[i];
+						lista[i] = lista[j];
+						lista[j] = auxVivienda;
+					}
+				}
+				else
+				{
+					if(order == 2) //descendente
+					{
+						if((strcmp(lista[i].calle, lista[j].calle) < 0) || ((strcmp(lista[i].calle, lista[j].calle) == 0) && lista[i].cantidadPersonas < lista[j].cantidadPersonas))
+						{
+							auxVivienda = lista[i];
+							lista[i] = lista[j];
+							lista[j] = auxVivienda;
+						}
+					}
+				}
+			}
+		}
+	   todoOk = 1;
+    }
+
+    return todoOk;
+}
+
+int hacerListado(eVivienda* lista, int tam)
+{
+	int todoOk = 0;
+	int opcion;
+	if(lista != NULL && tam > 0)
+	{
+        pedirEntero(&opcion, "\n¿En qué órden quiere la lista?\n   1. Ascendente\n   2. Decendente\n   3. Atras.\nIngrese opcion: ", "\nLa opcion no es valida. Reingrese: ", 1, 3);
+        if(opcion == 1)
+        {
+            ordenarViviendas(lista, tam, opcion);
+            mostrarListaViviendas(lista, tam);
+            todoOk = 1;
+        }
+        else if(opcion == 2)
+        {
+            ordenarViviendas(lista, tam, opcion);
+            mostrarListaViviendas(lista, tam);
+            todoOk = 1;
+        }
+        todoOk = 2;
+    }
+    return todoOk;
+}
+
+int censosPorCensista(eVivienda* listaViviendas, int tamViviendas, eCensista* listaCensistas, int tamCensistas)
+{
+    int todoOk = 0;
+    if(listaViviendas != NULL && tamViviendas > 0 && listaCensistas != NULL && tamCensistas > 0)
+    {
+        for(int i = 0; i < tamCensistas; i++)
+        {
+            mostrarTituloCensista();
+            mostrarUnCensista(listaCensistas[i]);
+            printf("\n");
+            mostrarTituloVivienda();
+            for(int j = 0; j < tamViviendas; j++)
+            {
+                if(listaCensistas[i].legajo == listaViviendas[j].legajoCensista)
+                {
+                    mostrarUnaVivienda(listaViviendas[j]);
+                }
+            }
+            printf("\n\n");
+        }
+        todoOk = 1;
+    }
+    return todoOk;
+}
+
+int obtenerCensistaConMasCensos(eVivienda* listaViviendas, int tamViviendas, eCensista* listaCensistas, int tamCensistas)
+{
+    int todoOk = 0;
+    int contAna = 0;
+    int contJuan = 0;
+    int contSol = 0;
+    int legajo;
+
+    if(listaViviendas != NULL && tamViviendas > 0 && listaCensistas != NULL && tamCensistas > 0)
+    {
+        for(int i = 0; i < tamViviendas; i++)
+        {
+            if(listaViviendas[i].legajoCensista == listaCensistas[0].legajo)
+            {
+                contAna++;
+            }
+            else if(listaViviendas[i].legajoCensista == listaCensistas[1].legajo)
+            {
+                contJuan++;
+            }
+            else if(listaViviendas[i].legajoCensista == listaCensistas[2].legajo)
+            {
+                contSol++;
+            }
+        }
+
+        if(contAna > contJuan && contAna > contSol)
+        {
+            legajo = listaCensistas[0].legajo;
+        }
+        else if(contJuan > contSol)
+        {
+            legajo = listaCensistas[1].legajo;
+        }
+        else
+        {
+            legajo = listaCensistas[2].legajo;
+        }
+        todoOk = 1;
+    }
+    return legajo;
+}
+
+void mostrarCensistaConMasCensos(eVivienda* listaViviendas, int tamViviendas, eCensista* listaCensistas, int tamCensistas)
+{
+    int legajo = obtenerCensistaConMasCensos(listaViviendas, tamViviendas, listaCensistas, tamCensistas);
+
+    for(int i = 0; i < tamCensistas; i++)
+    {
+        if(listaCensistas[i].legajo == legajo)
+        {
+            printf("\nEl censista con mas censos realizados es: %s", listaCensistas[i].nombre);
+            break;
+        }
+    }
+}

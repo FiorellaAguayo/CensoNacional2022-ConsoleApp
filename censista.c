@@ -1,18 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "censista.h"
+#include "vivienda.h"
 
-static void mostrarTituloCensista();
-static void mostrarUnCensista(eCensista censista);
-
-static void mostrarTituloCensista()
+void mostrarTituloCensista()
 {
     printf("\n-------------------------------------");
     printf("\n Legajo | Nombre | Edad | Telefono  |");
     printf("\n-------------------------------------");
 }
 
-static void mostrarUnCensista(eCensista censista)
+void mostrarUnCensista(eCensista censista)
 {
     printf("\n %-8d %-8s %-6d %d", censista.legajo, censista.nombre, censista.edad, censista.telefono);
 }
