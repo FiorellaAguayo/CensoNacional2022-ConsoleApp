@@ -150,7 +150,7 @@ int modificarVivienda(eVivienda* listaViviendas, int tamViviendas, eCensista* li
                 mostrarTituloVivienda();
                 mostrarUnaVivienda(listaViviendas[indice]);
                 char caracter;
-                pedirCaracter(&caracter, "\nEsta vivienda se modificara. ¿Estas seguro? (s = si | n = no): ", "La respuesta no es valida. Reingrese (s = si | n = no): ", 's', 'n');
+                pedirCaracter(&caracter, "\nEsta vivienda se modificara. Estas seguro? (s = si | n = no): ", "La respuesta no es valida. Reingrese (s = si | n = no): ", 's', 'n');
                 if(caracter == 's')
                 {
                     int opcion = menuModificacion();
@@ -215,7 +215,7 @@ int bajaVivienda(eVivienda* lista, int tam)
             {
                 mostrarTituloVivienda();
                 mostrarUnaVivienda(lista[indice]);
-                pedirCaracter(&caracter, "\nEsta vivienda se eliminara. ¿Estas seguro? (s = si | n = no): ", "La respuesta no es valida. Reingrese (s = si | n = no): ", 's', 'n');
+                pedirCaracter(&caracter, "\nEsta vivienda se eliminara. Estas seguro? (s = si | n = no): ", "La respuesta no es valida. Reingrese (s = si | n = no): ", 's', 'n');
                 if(caracter == 's')
                 {
                     lista[indice].isEmpty = 1;
@@ -277,7 +277,7 @@ int hacerListado(eVivienda* lista, int tam)
 	int opcion;
 	if(lista != NULL && tam > 0)
 	{
-        pedirEntero(&opcion, "\n¿En qué órden quiere la lista?\n   1. Ascendente\n   2. Decendente\n   3. Atras.\nIngrese opcion: ", "\nLa opcion no es valida. Reingrese: ", 1, 3);
+        pedirEntero(&opcion, "\nEn qué órden quiere la lista?\n   1. Ascendente\n   2. Decendente\n   3. Atras.\nIngrese opcion: ", "\nLa opcion no es valida. Reingrese: ", 1, 3);
         if(opcion == 1)
         {
             ordenarViviendas(lista, tam, opcion);
@@ -302,9 +302,7 @@ int censosPorCensista(eVivienda* listaViviendas, int tamViviendas, eCensista* li
     {
         for(int i = 0; i < tamCensistas; i++)
         {
-            mostrarTituloCensista();
-            mostrarUnCensista(listaCensistas[i]);
-            printf("\n");
+            printf("\nCensista: %s", listaCensistas[i].nombre);
             mostrarTituloVivienda();
             for(int j = 0; j < tamViviendas; j++)
             {
